@@ -1,0 +1,60 @@
+{
+  "name": "grunt-behat-wrapper",
+  "description": "Wrapper around the `behat` CLI tool.",
+  "version": "0.0.1",
+  "license": "GPL-2.0",
+  "homepage": "https://github.com/Sweetchuck",
+  "username": "Sweetchuck",
+  "author": {
+    "name": "Andor Dávid",
+    "url": "https://github.com/Sweetchuck",
+    "github": "Sweetchuck",
+    "twitter": "andor_david",
+    "linkedin": "andor-dávid/5b/484/b83"
+  },
+  "repository": {
+    "type": "git",
+    "owner": "Sweetchuck",
+    "name": "grunt-behat-wrapper",
+    "url": "https://github.com/Sweetchuck/grunt-behat-wrapper.git"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "dependencies": {
+    "any-shell-escape": "^0.1.1",
+    "async": "^0.9.2",
+    "bin-version-check": "^2.0.0",
+    "grunt-shell": "^1.1.2",
+    "shelljs": "^0.5.0",
+    "string": "^3.1.1"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-internal": "^0.4.12",
+    "grunt-contrib-nodeunit": "^0.4.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-eslint": "^16.0.0",
+    "grunt-verb": "^0.2.4",
+    "readme-badges": "^0.3.2"
+  },
+  "peerDependencies": {
+    "grunt": ">=0.4.0"
+  },
+  "keywords": [
+    "gruntplugin",
+    "grunt",
+    "plugin",
+    "behat",
+    "test",
+    "bdd"
+  ],
+  "files": [
+    "tasks"
+  ]
+}

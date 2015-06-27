@@ -1,0 +1,6 @@
+
+releaseHistory:
+  v0.0.1:
+    date: '2015-06-27'
+    changes:
+      - 'Initial release with basic functions.'
