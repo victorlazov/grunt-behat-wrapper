@@ -117,6 +117,39 @@ exports.init = function (grunt) {
 
     /**
      * @param {BehatDefaultOptions} options
+     * @param {String[]} args
+     *
+     * @return {Behat}
+     */
+    this.overrideOptionsByFlagPatterns = function (options, args) {
+      var a;
+      var flag;
+      for (a = 0; a < args.length; a++) {
+        flag = args[a];
+
+        if (S(flag).startsWith('lang-')) {
+
+          // @todo Language can't be an empty string.
+          options.args.lang = S(flag).chompLeft('lang-').s;
+        }
+        else if (S(flag).startsWith('profile-')) {
+
+          // @todo Profile can't be an empty string.
+          options.args.profile = S(flag).chompLeft('profile-').s;
+        }
+        else if (S(flag).startsWith('def-')) {
+
+          // @todo Definitions can't be an empty string.
+          options.args.definitions = S(flag).chompLeft('def-').s;
+        }
+      }
+
+      return self;
+    };
+
+
+    /**
+     * @param {BehatDefaultOptions} options
      * @param {Object} flags
      * @param {Object} flagsSchema
      *

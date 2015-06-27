@@ -9,7 +9,6 @@ module.exports = function (grunt) {
 
   /** @type {Behat} behat */
   var behat = require('./lib/behat').init(grunt);
-  var S = require('string');
 
   grunt.registerMultiTask('behat-definitions', 'Run `behat --definitions` command', function () {
 
@@ -21,25 +20,8 @@ module.exports = function (grunt) {
       options.args.definitions = behat.defaultOptions.definitions.args.definitions;
     }
 
-    var a;
-    var flag;
-    for (a = 0; a < this.args.length; a++) {
-      flag = this.args[a];
-
-      if (S(flag).startsWith('lang-')) {
-
-        // @todo Language can't be an empty string.
-        options.args.lang = S(flag).chompLeft('lang-').s;
-
-        continue;
-      }
-
-      if (behat.flagsSchema.hasOwnProperty(flag) === false) {
-        options.args.definitions = flag;
-      }
-    }
-
     behat
+      .overrideOptionsByFlagPatterns(options, this.args)
       .overrideOptionsByFlags(options, this.flags)
       .validateOptions(options)
       .execDefinitions(options);
@@ -51,6 +33,7 @@ module.exports = function (grunt) {
     var options = this.options(behat.defaultOptions.storySyntax);
 
     behat
+      .overrideOptionsByFlagPatterns(options, this.args)
       .overrideOptionsByFlags(options, this.flags)
       .validateOptions(options)
       .execStorySyntax(options);
@@ -62,6 +45,7 @@ module.exports = function (grunt) {
     var options = this.options(behat.defaultOptions.configReference);
 
     behat
+      .overrideOptionsByFlagPatterns(options, this.args)
       .overrideOptionsByFlags(options, this.flags)
       .validateOptions(options)
       .execConfigReference(options);
@@ -75,6 +59,7 @@ module.exports = function (grunt) {
     grunt.util._.merge(this.data, {paths: []});
 
     behat
+      .overrideOptionsByFlagPatterns(options, this.args)
       .overrideOptionsByFlags(options, this.flags)
       .validateOptions(options)
       .execRun(options, this.data.paths);
@@ -86,6 +71,7 @@ module.exports = function (grunt) {
     var options = this.options(behat.defaultOptions.rerun);
 
     behat
+      .overrideOptionsByFlagPatterns(options, this.args)
       .overrideOptionsByFlags(options, this.flags)
       .validateOptions(options)
       .execRerun(options);

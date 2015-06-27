@@ -25,7 +25,7 @@ Run tests.
     * [verbose](#optionsargsverbose)
     * [noInteraction](#optionsargsnointeraction)
     * [colors](#optionsargscolors)
-* [files](#files)
+* [paths](#paths)
 
 With the default options the
 ```bash

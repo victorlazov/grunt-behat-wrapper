@@ -1,5 +1,11 @@
 
 releaseHistory:
+  v0.0.2:
+    date: '2015-06-28'
+    changes:
+      - 'Add dynamic flag support for --lang, --definitions and --profile.'
+      - 'Fix "files" vs "paths" documentation bug.'
+
   v0.0.1:
     date: '2015-06-27'
     changes:

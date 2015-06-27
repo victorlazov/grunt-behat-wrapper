@@ -171,7 +171,17 @@ guessed based on your platform and the output if not specified.
 If `false` then force no ANSI color in the output.
 
 
-## files
+## paths
 
-For more information see the Grunt documentation
-[Configuring tasks/files](http://gruntjs.com/configuring-tasks#files)
+Type: `String[]`
+
+Default value: `[]`
+
+Optional path(s) to execute. Could be:
+
+* a dir (features/)
+* a feature (*.feature)
+* a scenario at specific line (*.feature:10).
+* all scenarios at or after a specific line (*.feature:10-*).
+* all scenarios at a line within a specific range (*.feature:10-20).
+* a scenarios list file (*.scenarios).
