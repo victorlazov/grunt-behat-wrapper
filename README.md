@@ -497,6 +497,9 @@ grunt.config.init({
 
 ## Release History
 
+* **v0.0.2** - 2015-06-28
+  * Add dynamic flag support for --lang, --definitions and --profile.
+  * Fix "files" vs "paths" documentation bug.
 * **v0.0.1** - 2015-06-27
   * Initial release with basic functions.
 
