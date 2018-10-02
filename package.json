@@ -30,7 +30,7 @@
     "bin-version-check": "^2.0.0",
     "grunt-shell": "^1.1.2",
     "shelljs": "^0.5.0",
-    "string": "^3.1.1"
+    "string": "github:commenthol/string.js#fix-redos"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
